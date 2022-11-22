@@ -4,7 +4,8 @@
 //Matricula: 
 
 
-#include <iostream>
+#include <thread>
+#include <chrono>
 #include <iostream>
 #include <locale.h>
 #include <fstream>
@@ -18,6 +19,40 @@ using namespace std;
 //inicializando os metodos
 void menu();
 void voltarAoMenu();
+
+int senhasDia = 0; //Deixar Variavel Global para garantirmos que terá somente 16 senhas no dia
+
+void gerarSenha(int segundos=60, int numeroSenhas=16) {
+	//Aqui o programa vai atualizar a senha do vetor do paciente, indicando o numero. 
+	//Tambem vai atualizar o Status para Aguardando Triagem
+
+	cout << "\nFunction gerarSenha\n";
+	if (senhasDia >= numeroSenhas) {
+		for (size_t i = 0; i < numeroSenhas; i++)
+		{
+			senhasDia = i;
+			verificaCadastro();
+			//cout << "Contando " << segundos << "s: " << i << "s.." << endl;
+			this_thread::sleep_for(chrono::seconds(segundos));
+		}
+	}
+	else {
+		cout << "\nTotal de senhas ja geradas no dia.\n";
+		cout << "\nVolte mais Tarde!";
+	}
+	
+}
+
+void verificaCadastro() {
+	//Funcao de entrada, se o paciente tiver Cadastro, gera a senha, se nao, cria cadastro e verifica cadastro
+	string nome;
+	cout << "\nFunction Verifica Cadastro\n";
+	cout << "\nQual o seu nome?\n";
+	std::cin >> nome;
+
+	//if nome existe, gera senha
+	//else criar, e gera senha
+}
 
 void voltarAoMenu() {
 	int opt;
