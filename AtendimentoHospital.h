@@ -6,10 +6,7 @@ using namespace std;
 class AtendimentoHospital
 {
 public:
-	//string nome;
-	//string rg;
-	//int senha;
-	//int gerarSenha();
+
 private:
 
 };

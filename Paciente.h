@@ -15,6 +15,7 @@ class Paciente
         int idade;
         Paciente(string nome, string endereco, string telefone, string rg,
             string cpf, int idade);
+        void imprimir();
         
 
 
@@ -30,4 +31,13 @@ Paciente::Paciente(string nome, string endereco, string telefone, string rg,
     this->rg = rg;
     this->cpf = cpf;
     this->idade = idade;
+}
+
+    void Paciente :: imprimir() {
+        cout << "NOME: " << this->nome;
+        cout << "ENDEREÇO: " << this->endereco;
+        cout << "TELEFONE: " << this->telefone;
+        cout << "RG: " << this->rg;
+        cout << "CPF: " << this->cpf;
+        cout << "IDADE: " << this->idade;
 }

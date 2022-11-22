@@ -13,32 +13,43 @@ using namespace std;
 
 int main()
 {
+    string nome;
+    string endereco;
+    string telefone;
+    string rg;
+    string cpf;
+    int idade;
+    string sintomas;
+
     Triagem * triagem = new Triagem();
     cout << "NOME: ";
-    cin >> triagem->nome;
+    cin >> nome;
 
     cout << "ENDEREÇO: ";
-    cin >> triagem->endereco;
+    cin >> endereco;
 
     cout << "TELEFONE: ";
-    cin >> triagem->telefone;
+    cin >> telefone;
 
     cout << "RG: ";
-    cin >> triagem->rg;
+    cin >> rg;
 
     cout << "CPF: ";
-    cin >> triagem->cpf;
+    cin >> cpf;
 
     cout << "IDADE: ";
-    cin >> triagem->idade;
+    cin >> idade;
 
     cout << "SINTOMAS: : ";
-    cin >> triagem->sintoma;
+    cin >> sintomas;
 
-    Paciente * paciente = new Paciente(triagem->nome,triagem->endereco,triagem->telefone,triagem->rg
-        ,triagem->cpf,triagem->idade);
+    Paciente* paciente = new Paciente(nome, endereco, telefone, rg
+        , cpf, idade);
 
-    
+    triagem->cadastrarPaciente(* paciente);
+
+     paciente->imprimir();
+
 
     return 0;
 }

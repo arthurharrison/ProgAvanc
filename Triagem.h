@@ -12,7 +12,7 @@ class Triagem : public Paciente
 
         string sintoma;
         vector<Paciente> listaPaciente;
-       // void triagemPaciente(Paciente paciente);
+        void cadastrarPaciente(Paciente paciente);
         Triagem();
         
     private:
@@ -22,3 +22,6 @@ class Triagem : public Paciente
 };
 
 
+ void Triagem :: cadastrarPaciente(Paciente paciente) {
+     this->listaPaciente.push_back(paciente);
+}
