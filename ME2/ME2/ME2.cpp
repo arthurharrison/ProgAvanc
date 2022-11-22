@@ -12,13 +12,41 @@
 #include <istream>
 #include <ostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
+#pragma once
+class Paciente {
+	public:
+		string nome;
+		string telefone;
+		string status = "Aguardando";
+		int senha=0;
+		vector<Paciente> listaPacientes;
+		void cadastrarPaciente(); //Implementar Cadastro, Alteração e Busca por pacientes
+		void imprimePaciente();
+		void alteraSenha(int novaSenha);
+
+
+};
+
+void Paciente::imprimePaciente() {
+	cout << "Paciente: \n\Nome: "
+		<< Paciente::nome <<
+		"\n\tTelefone: " << Paciente::telefone<<
+		"\n\tStatus: " << Paciente::status <<
+		"\n";
+}
+
+void Paciente::alteraSenha(int novaSenha) {
+	senha = novaSenha;
+}
 
 //inicializando os metodos
 void menu();
 void voltarAoMenu();
+void verificaCadastro();
 
 int senhasDia = 0; //Deixar Variavel Global para garantirmos que terá somente 16 senhas no dia
 
@@ -30,6 +58,7 @@ void gerarSenha(int segundos=60, int numeroSenhas=16) {
 	if (senhasDia >= numeroSenhas) {
 		for (size_t i = 0; i < numeroSenhas; i++)
 		{
+			cout << "Senha N: " << numeroSenhas  << endl;
 			senhasDia = i;
 			verificaCadastro();
 			//cout << "Contando " << segundos << "s: " << i << "s.." << endl;
