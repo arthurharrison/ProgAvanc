@@ -9,15 +9,16 @@ class Triagem : public Paciente
 {
 
     public:
-        string cpf;
-        string endereco;
-        string telefone;
-        int idade;
+
         string sintoma;
         vector<Paciente> listaPaciente;
+       // void triagemPaciente(Paciente paciente);
+        Triagem();
+        
     private:
 
 
 
 };
+
 

@@ -4,41 +4,42 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include "Paciente.h"
+#include "Triagem.h"
+#include <stralign.h>
 using namespace std;
 
-class AtendimentoHospital{
 
-public:
-    string nome;
-    string cpf;
-    string rg;
-    string sintoma;
-private:
-
-
-
-
-};
-
-class Paciente{
-public:
-    string nome;
-    string endereco;
-    string telefone;
-    string rg;
-    string cpf;
-    vector<Paciente> listaPacientes;
-    void cadastrarPaciente();
-
-    
-private:
-
-};
 
 int main()
 {
-    Paciente * paciente = new Paciente();
-  
+    Triagem * triagem = new Triagem();
+    cout << "NOME: ";
+    cin >> triagem->nome;
+
+    cout << "ENDEREÇO: ";
+    cin >> triagem->endereco;
+
+    cout << "TELEFONE: ";
+    cin >> triagem->telefone;
+
+    cout << "RG: ";
+    cin >> triagem->rg;
+
+    cout << "CPF: ";
+    cin >> triagem->cpf;
+
+    cout << "IDADE: ";
+    cin >> triagem->idade;
+
+    cout << "SINTOMAS: : ";
+    cin >> triagem->sintoma;
+
+    Paciente * paciente = new Paciente(triagem->nome,triagem->endereco,triagem->telefone,triagem->rg
+        ,triagem->cpf,triagem->idade);
+
+    
+
     return 0;
 }
 

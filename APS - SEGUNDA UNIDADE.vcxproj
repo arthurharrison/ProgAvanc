@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="APS - SEGUNDA UNIDADE.cpp" />
+    <ClCompile Include="Programa.cpp" />
+    <ClCompile Include="AtendimentoHospital.cpp" />
+    <ClCompile Include="Triagem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AtendimentoHospital.h" />
+    <ClInclude Include="Medico.h" />
+    <ClInclude Include="Paciente.h" />
+    <ClInclude Include="Triagem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
